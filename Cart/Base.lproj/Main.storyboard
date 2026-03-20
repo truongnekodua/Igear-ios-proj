@@ -1,0 +1,968 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Nav-Com-pGear">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="Nav-Sce-Gear">
+            <objects>
+                <navigationController id="Nav-Com-pGear" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nav-Bar-Gear">
+                        <rect key="frame" x="0.0" y="96" width="414" height="54"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Seg-Vue-Gear"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nav-Pla-Gear" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-626" y="3"/>
+        </scene>
+        <!--Giỏ hàng-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bot-Bar-pGear">
+                                <rect key="frame" x="0.0" y="698" width="414" height="130"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pro-Mo-Row">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gift.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Ico-n1">
+                                                <rect key="frame" x="16" y="14" width="20" height="20.5"/>
+                                                <color key="tintColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="21" id="Gft-Hg-1"/>
+                                                    <constraint firstAttribute="width" constant="20" id="Gft-Wd-1"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn hoặc nhập khuyến mãi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prm-Txt-Lbl">
+                                                <rect key="frame" x="44" y="16" width="193.5" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" ĐÃ CHỌN 1 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prm-Sel-Lbl">
+                                                <rect key="frame" x="298.5" y="15" width="73.5" height="20"/>
+                                                <color key="backgroundColor" red="0.92549019610000005" green="0.93333333330000001" blue="0.98823529409999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Prm-Hg-1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                                <color key="textColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                        <integer key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-Rgt-1">
+                                                <rect key="frame" x="384" y="16.5" width="14" height="16.5"/>
+                                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="Chv-Hg-1"/>
+                                                    <constraint firstAttribute="width" constant="14" id="Chv-Wd-1"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Chv-Rgt-1" secondAttribute="trailing" constant="16" id="Chv-Tr-1"/>
+                                            <constraint firstItem="Gft-Ico-n1" firstAttribute="centerY" secondItem="Pro-Mo-Row" secondAttribute="centerY" id="Gft-Cy-1"/>
+                                            <constraint firstItem="Gft-Ico-n1" firstAttribute="leading" secondItem="Pro-Mo-Row" secondAttribute="leading" constant="16" id="Gft-Ld-1"/>
+                                            <constraint firstItem="Prm-Txt-Lbl" firstAttribute="centerY" secondItem="Pro-Mo-Row" secondAttribute="centerY" id="Prm-Cy-1"/>
+                                            <constraint firstItem="Prm-Sel-Lbl" firstAttribute="centerY" secondItem="Pro-Mo-Row" secondAttribute="centerY" id="Prm-Cy-2"/>
+                                            <constraint firstItem="Chv-Rgt-1" firstAttribute="centerY" secondItem="Pro-Mo-Row" secondAttribute="centerY" id="Prm-Cy-3"/>
+                                            <constraint firstItem="Prm-Txt-Lbl" firstAttribute="leading" secondItem="Gft-Ico-n1" secondAttribute="trailing" constant="8" id="Prm-Ld-1"/>
+                                            <constraint firstItem="Chv-Rgt-1" firstAttribute="leading" secondItem="Prm-Sel-Lbl" secondAttribute="trailing" constant="12" id="Prm-Tr-1"/>
+                                            <constraint firstAttribute="height" constant="50" id="Pro-Hg-1"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Div-ide-Gear">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="1"/>
+                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="Div-Hg-ht1"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29.990.000đ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tot-Pri-Lbl">
+                                        <rect key="frame" x="16" y="66" width="138" height="26.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <color key="textColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-Up-1">
+                                        <rect key="frame" x="158" y="69.5" width="18" height="18"/>
+                                        <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27.5" id="Chv-Hg-2"/>
+                                            <constraint firstAttribute="width" constant="18" id="Chv-Wd-2"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Che-out-Btn">
+                                        <rect key="frame" x="238" y="65" width="160" height="46"/>
+                                        <color key="backgroundColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="Btn-Hg-ht1"/>
+                                            <constraint firstAttribute="width" constant="160" id="Btn-Wd-th1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                        <state key="normal" title="Tiếp tục">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="Add-Res-ID" kind="show" identifier="toAddressScreen" id="ixK-6j-zHQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="Bot-Hg-ht1"/>
+                                    <constraint firstItem="Che-out-Btn" firstAttribute="top" secondItem="Div-ide-Gear" secondAttribute="bottom" constant="14" id="Che-out-Tp1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Che-out-Btn" secondAttribute="trailing" constant="16" id="Che-out-Tr1"/>
+                                    <constraint firstItem="Chv-Up-1" firstAttribute="centerY" secondItem="Tot-Pri-Lbl" secondAttribute="centerY" id="Chv-Cy-1"/>
+                                    <constraint firstItem="Chv-Up-1" firstAttribute="leading" secondItem="Tot-Pri-Lbl" secondAttribute="trailing" constant="4" id="Chv-Ld-1"/>
+                                    <constraint firstItem="Div-ide-Gear" firstAttribute="leading" secondItem="Bot-Bar-pGear" secondAttribute="leading" id="Div-Ld-ng1"/>
+                                    <constraint firstItem="Div-ide-Gear" firstAttribute="top" secondItem="Pro-Mo-Row" secondAttribute="bottom" id="Div-Tp-ng1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Div-ide-Gear" secondAttribute="trailing" id="Div-Tr-ng1"/>
+                                    <constraint firstItem="Pro-Mo-Row" firstAttribute="leading" secondItem="Bot-Bar-pGear" secondAttribute="leading" id="Pro-Ld-1"/>
+                                    <constraint firstItem="Pro-Mo-Row" firstAttribute="top" secondItem="Bot-Bar-pGear" secondAttribute="top" id="Pro-Tp-1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pro-Mo-Row" secondAttribute="trailing" id="Pro-Tr-1"/>
+                                    <constraint firstItem="Tot-Pri-Lbl" firstAttribute="leading" secondItem="Bot-Bar-pGear" secondAttribute="leading" constant="16" id="Tot-Ld-ng1"/>
+                                    <constraint firstItem="Tot-Pri-Lbl" firstAttribute="top" secondItem="Div-ide-Gear" secondAttribute="bottom" constant="15" id="Tot-Tp-ng1"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="230" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tab-le-iGear">
+                                <rect key="frame" x="0.0" y="150" width="414" height="548"/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CartItemCell" id="Cel-l1-iGear" customClass="CartItemCell" customModule="Cart" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="230"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Cel-l1-iGear" id="Con-tn-Viw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="230"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Car-d1-iGear">
+                                                    <rect key="frame" x="0.0" y="8" width="414" height="214"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-Box-1">
+                                                            <rect key="frame" x="16" y="49" width="24" height="21.5"/>
+                                                            <color key="tintColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="24" id="Chk-Hg-1"/>
+                                                                <constraint firstAttribute="width" constant="24" id="Chk-Wd-1"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Img-Pr-dct">
+                                                            <rect key="frame" x="48" y="20" width="80" height="80"/>
+                                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="80" id="Img-Hg-ht1"/>
+                                                                <constraint firstAttribute="width" constant="80" id="Img-Wd-th1"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Máy tính xách tay/ Laptop Acer Nitro 16 Phoenix AN16-41-R5M4..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-Pr-dct">
+                                                            <rect key="frame" x="140" y="16" width="234" height="33.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29.990.000đ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Prc-Pr-dct">
+                                                            <rect key="frame" x="140" y="70" width="102.5" height="19.5"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qty-Sta-Gear">
+                                                            <rect key="frame" x="308" y="65" width="90" height="30"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="In-Stk-Gear">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="30"/>
+                                                                    <subviews>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-Mn-us1">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <state key="normal" title="-">
+                                                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="minusTapped:" destination="Cel-l1-iGear" eventType="touchUpInside" id="Enb-Vl-NYy"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbl-Qt-ty1">
+                                                                            <rect key="frame" x="30" y="0.0" width="30" height="30"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                            <nil key="textColor"/>
+                                                                            <nil key="highlightedColor"/>
+                                                                        </label>
+                                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-Pl-us1">
+                                                                            <rect key="frame" x="60" y="0.0" width="30" height="30"/>
+                                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                            <state key="normal" title="+">
+                                                                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                            </state>
+                                                                            <connections>
+                                                                                <action selector="plusTapped:" destination="Cel-l1-iGear" eventType="touchUpInside" id="ize-mY-n02"/>
+                                                                            </connections>
+                                                                        </button>
+                                                                    </subviews>
+                                                                </stackView>
+                                                            </subviews>
+                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="bottom" secondItem="In-Stk-Gear" secondAttribute="bottom" id="In-Stk-Bt1"/>
+                                                                <constraint firstItem="In-Stk-Gear" firstAttribute="leading" secondItem="Qty-Sta-Gear" secondAttribute="leading" id="In-Stk-Ld1"/>
+                                                                <constraint firstItem="In-Stk-Gear" firstAttribute="top" secondItem="Qty-Sta-Gear" secondAttribute="top" id="In-Stk-Tp1"/>
+                                                                <constraint firstAttribute="trailing" secondItem="In-Stk-Gear" secondAttribute="trailing" id="In-Stk-Tr1"/>
+                                                                <constraint firstAttribute="height" constant="30" id="Sta-Hg-ht1"/>
+                                                                <constraint firstAttribute="width" constant="90" id="Sta-Wd-th1"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                                    <integer key="value" value="1"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                                    <color key="value" white="0.90000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="4"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Bx-1">
+                                                            <rect key="frame" x="48" y="112" width="350" height="86"/>
+                                                            <subviews>
+                                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Chv-Gft-1">
+                                                                    <rect key="frame" x="326" y="34.5" width="16" height="16.5"/>
+                                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="20" id="Chv-Hg-3"/>
+                                                                        <constraint firstAttribute="width" constant="16" id="Chv-Wd-3"/>
+                                                                    </constraints>
+                                                                </imageView>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gft-Txt-1">
+                                                                    <rect key="frame" x="8" y="8" width="310" height="70"/>
+                                                                    <string key="text">🎁 1x Ba lô Acer Gaming SUV
+🎁 1x Bàn phím cơ Acer PREDATOR...
+🎁 1x Mã giảm thêm 150.000 cho chuột...</string>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                    <color key="textColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <color key="backgroundColor" red="0.96862745098039216" green="0.97254901960784312" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstItem="Chv-Gft-1" firstAttribute="centerY" secondItem="Gft-Bx-1" secondAttribute="centerY" id="Chv-Cy-2"/>
+                                                                <constraint firstItem="Chv-Gft-1" firstAttribute="leading" secondItem="Gft-Txt-1" secondAttribute="trailing" constant="8" id="Chv-Ld-2"/>
+                                                                <constraint firstAttribute="trailing" secondItem="Chv-Gft-1" secondAttribute="trailing" constant="8" id="Chv-Tr-2"/>
+                                                                <constraint firstAttribute="bottom" secondItem="Gft-Txt-1" secondAttribute="bottom" constant="8" id="Gft-Bt-1"/>
+                                                                <constraint firstItem="Gft-Txt-1" firstAttribute="leading" secondItem="Gft-Bx-1" secondAttribute="leading" constant="8" id="Gft-Ld-2"/>
+                                                                <constraint firstItem="Gft-Txt-1" firstAttribute="top" secondItem="Gft-Bx-1" secondAttribute="top" constant="8" id="Gft-Tp-1"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="6"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </view>
+                                                    </subviews>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <constraints>
+                                                        <constraint firstItem="Img-Pr-dct" firstAttribute="top" secondItem="Car-d1-iGear" secondAttribute="top" constant="20" id="Car-Cy-ng1"/>
+                                                        <constraint firstItem="Img-Pr-dct" firstAttribute="leading" secondItem="Chk-Box-1" secondAttribute="trailing" constant="8" id="Car-Ld-ng1"/>
+                                                        <constraint firstItem="Chk-Box-1" firstAttribute="centerY" secondItem="Img-Pr-dct" secondAttribute="centerY" id="Chk-Cy-1"/>
+                                                        <constraint firstItem="Chk-Box-1" firstAttribute="leading" secondItem="Car-d1-iGear" secondAttribute="leading" constant="16" id="Chk-Ld-1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="Gft-Bx-1" secondAttribute="bottom" constant="16" id="Gft-Bx-Bt"/>
+                                                        <constraint firstItem="Gft-Bx-1" firstAttribute="leading" secondItem="Img-Pr-dct" secondAttribute="leading" id="Gft-Bx-Ld"/>
+                                                        <constraint firstItem="Gft-Bx-1" firstAttribute="top" secondItem="Img-Pr-dct" secondAttribute="bottom" constant="12" id="Gft-Bx-Tp"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Gft-Bx-1" secondAttribute="trailing" constant="16" id="Gft-Bx-Tr"/>
+                                                        <constraint firstItem="Nam-Pr-dct" firstAttribute="leading" secondItem="Img-Pr-dct" secondAttribute="trailing" constant="12" id="Nam-Ld-ng1"/>
+                                                        <constraint firstItem="Nam-Pr-dct" firstAttribute="top" secondItem="Car-d1-iGear" secondAttribute="top" constant="16" id="Nam-Tp-ng1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Nam-Pr-dct" secondAttribute="trailing" constant="40" id="Nam-Tr-ng1"/>
+                                                        <constraint firstItem="Prc-Pr-dct" firstAttribute="leading" secondItem="Img-Pr-dct" secondAttribute="trailing" constant="12" id="Prc-Ld-ng1"/>
+                                                        <constraint firstItem="Prc-Pr-dct" firstAttribute="top" secondItem="Nam-Pr-dct" secondAttribute="bottom" constant="20.5" id="Prc-Tp-ng1"/>
+                                                        <constraint firstItem="Qty-Sta-Gear" firstAttribute="centerY" secondItem="Prc-Pr-dct" secondAttribute="centerY" id="Qty-Sta-Bt1"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Qty-Sta-Gear" secondAttribute="trailing" constant="16" id="Qty-Sta-Tr1"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="Car-d1-iGear" secondAttribute="bottom" constant="8" id="Cel-Bt-ng1"/>
+                                                <constraint firstItem="Car-d1-iGear" firstAttribute="leading" secondItem="Con-tn-Viw" secondAttribute="leading" id="Cel-Ld-ng1"/>
+                                                <constraint firstItem="Car-d1-iGear" firstAttribute="top" secondItem="Con-tn-Viw" secondAttribute="top" constant="8" id="Cel-Tp-ng1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Car-d1-iGear" secondAttribute="trailing" id="Cel-Tr-ng1"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="checkboxImageView" destination="Chk-Box-1" id="aTR-Ei-7y3"/>
+                                            <outlet property="giftBoxView" destination="Gft-Txt-1" id="rj2-aa-pqQ"/>
+                                            <outlet property="giftTextLabel" destination="Gft-Txt-1" id="ldD-aF-zIP"/>
+                                            <outlet property="nameLabel" destination="Nam-Pr-dct" id="3Oi-vJ-AzV"/>
+                                            <outlet property="priceLabel" destination="Prc-Pr-dct" id="wSe-VN-Vby"/>
+                                            <outlet property="productImageView" destination="Img-Pr-dct" id="95g-gd-WoT"/>
+                                            <outlet property="quantityLabel" destination="Lbl-Qt-ty1" id="Ndy-Kx-461"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Bot-Bar-pGear" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Bot-Bt-Cns"/>
+                            <constraint firstItem="Bot-Bar-pGear" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Bot-Ld-Cns"/>
+                            <constraint firstItem="Bot-Bar-pGear" firstAttribute="top" secondItem="Tab-le-iGear" secondAttribute="bottom" id="Bot-Tp-Tab"/>
+                            <constraint firstItem="Bot-Bar-pGear" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Bot-Tr-Cns"/>
+                            <constraint firstItem="Tab-le-iGear" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tab-Ld-Cns"/>
+                            <constraint firstItem="Tab-le-iGear" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Tab-Tp-Cns"/>
+                            <constraint firstItem="Tab-le-iGear" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Tab-Tr-Cns"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Giỏ hàng" id="Nav-Ite-Gear">
+                        <barButtonItem key="rightBarButtonItem" image="trash" catalog="system" id="Edt-Btn-Gear">
+                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="trashButtonTapped:" destination="BYZ-38-t0r" id="Hsx-nH-yKf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Tab-le-iGear" id="2Gj-1W-qTh"/>
+                        <outlet property="totalPriceLabel" destination="Tot-Pri-Lbl" id="hBa-Ul-S6O"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="200" y="3"/>
+        </scene>
+        <!--Address View Controller-->
+        <scene sceneID="Add-Res-Sce">
+            <objects>
+                <viewController storyboardIdentifier="AddressViewController" id="Add-Res-ID" customClass="AddressViewController" customModule="Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Add-Res-Viw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-Cre-Add">
+                                <rect key="frame" x="16" y="758" width="382" height="50"/>
+                                <color key="backgroundColor" red="0.1450980392" green="0.38823529410000002" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Btn-Hg-Add"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Tạo địa chỉ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="createAddressTapped:" destination="Add-Res-ID" eventType="touchUpInside" id="Act-Cre-Add"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-Viw-Add">
+                                <rect key="frame" x="0.0" y="150" width="414" height="592"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Con-Viw-Add">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="600"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Stk-Viw-Add">
+                                                <rect key="frame" x="16" y="16" width="382" height="560"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THÔNG TIN NGƯỜI NHẬN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbl-Sec-1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="382" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Họ và tên (Bắt buộc)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-Nam-Add">
+                                                        <rect key="frame" x="0.0" y="28" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Hg-Nam-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Lỗi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xr6-HG-lKF">
+                                                        <rect key="frame" x="0.0" y="84" width="382" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Số điện thoại (Bắt buộc)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-Pho-Add">
+                                                        <rect key="frame" x="0.0" y="110.5" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Hg-Pho-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Lỗi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dzs-tQ-wI9">
+                                                        <rect key="frame" x="0.0" y="166.5" width="382" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-Ema-Add">
+                                                        <rect key="frame" x="0.0" y="193" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Hg-Ema-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-Cer-1">
+                                                        <rect key="frame" x="0.0" y="249" width="382" height="16"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* Lỗi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="94w-C0-Dt6">
+                                                                <rect key="frame" x="0.0" y="1" width="382" height="14.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                                <color key="textColor" systemColor="systemRedColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstItem="94w-C0-Dt6" firstAttribute="centerY" secondItem="Spa-Cer-1" secondAttribute="centerY" id="FxE-rI-UTt"/>
+                                                            <constraint firstAttribute="height" constant="16" id="Hg-Spa-1"/>
+                                                            <constraint firstItem="94w-C0-Dt6" firstAttribute="leading" secondItem="Spa-Cer-1" secondAttribute="leading" id="Ovo-0e-7nr"/>
+                                                            <constraint firstItem="94w-C0-Dt6" firstAttribute="top" secondItem="Spa-Cer-1" secondAttribute="top" constant="1" id="REz-Xa-PEB"/>
+                                                            <constraint firstItem="94w-C0-Dt6" firstAttribute="centerX" secondItem="Spa-Cer-1" secondAttribute="centerX" id="nre-0f-5ZP"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐỊA CHỈ NHẬN HÀNG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lbl-Sec-2">
+                                                        <rect key="frame" x="0.0" y="277" width="382" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tỉnh/thành phố (Bắt buộc)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-Cit-Add">
+                                                        <rect key="frame" x="0.0" y="305" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Hg-Cit-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="* Lỗi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ou-7H-i0M">
+                                                        <rect key="frame" x="0.0" y="361" width="382" height="0.0"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <color key="textColor" systemColor="systemRedColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Quận/huyện" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-Dis-Add">
+                                                        <rect key="frame" x="0.0" y="373" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Hg-Dis-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phường/xã" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-War-Add">
+                                                        <rect key="frame" x="0.0" y="429" width="382" height="44"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="44" id="Hg-War-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Địa chỉ cụ thể (Số nhà, tên đường...)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Txt-Str-Add">
+                                                        <rect key="frame" x="0.0" y="485" width="382" height="60"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="60" id="Hg-Str-Add"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spa-Cer-2">
+                                                        <rect key="frame" x="0.0" y="557" width="382" height="3"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="600" id="Bep-mK-NqV"/>
+                                            <constraint firstAttribute="bottom" secondItem="Stk-Viw-Add" secondAttribute="bottom" constant="24" id="Cns-Bt-Stk"/>
+                                            <constraint firstItem="Stk-Viw-Add" firstAttribute="leading" secondItem="Con-Viw-Add" secondAttribute="leading" constant="16" id="Cns-Ld-Stk"/>
+                                            <constraint firstItem="Stk-Viw-Add" firstAttribute="top" secondItem="Con-Viw-Add" secondAttribute="top" constant="16" id="Cns-Tp-Stk"/>
+                                            <constraint firstAttribute="trailing" secondItem="Stk-Viw-Add" secondAttribute="trailing" constant="16" id="Cns-Tr-Stk"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Con-Viw-Add" firstAttribute="leading" secondItem="Scr-Viw-Add" secondAttribute="leading" id="Scr-Cns-1"/>
+                                    <constraint firstItem="Con-Viw-Add" firstAttribute="trailing" secondItem="Scr-Viw-Add" secondAttribute="trailing" id="Scr-Cns-2"/>
+                                    <constraint firstItem="Con-Viw-Add" firstAttribute="top" secondItem="Scr-Viw-Add" secondAttribute="top" id="Scr-Cns-3"/>
+                                    <constraint firstItem="Con-Viw-Add" firstAttribute="bottom" secondItem="Scr-Viw-Add" secondAttribute="bottom" id="Scr-Cns-4"/>
+                                    <constraint firstItem="Con-Viw-Add" firstAttribute="width" secondItem="Scr-Viw-Add" secondAttribute="width" id="Scr-Cns-5"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Saf-Are-Add"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Saf-Are-Add" firstAttribute="bottom" secondItem="Btn-Cre-Add" secondAttribute="bottom" constant="20" id="Cns-Bt-Btn"/>
+                            <constraint firstItem="Btn-Cre-Add" firstAttribute="top" secondItem="Scr-Viw-Add" secondAttribute="bottom" constant="16" id="Cns-Btn-Scr"/>
+                            <constraint firstItem="Btn-Cre-Add" firstAttribute="leading" secondItem="Saf-Are-Add" secondAttribute="leading" constant="16" id="Cns-Ld-Btn"/>
+                            <constraint firstItem="Scr-Viw-Add" firstAttribute="leading" secondItem="Saf-Are-Add" secondAttribute="leading" id="Cns-Ld-Scr"/>
+                            <constraint firstItem="Scr-Viw-Add" firstAttribute="top" secondItem="Saf-Are-Add" secondAttribute="top" id="Cns-Tp-Scr"/>
+                            <constraint firstItem="Saf-Are-Add" firstAttribute="trailing" secondItem="Btn-Cre-Add" secondAttribute="trailing" constant="16" id="Cns-Tr-Btn"/>
+                            <constraint firstItem="Scr-Viw-Add" firstAttribute="trailing" secondItem="Saf-Are-Add" secondAttribute="trailing" id="Cns-Tr-Scr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZdT-qU-6ug"/>
+                    <connections>
+                        <outlet property="cityErrorLabel" destination="2ou-7H-i0M" id="XqJ-mi-nXy"/>
+                        <outlet property="cityTextField" destination="Txt-Cit-Add" id="Out-Cit-Add"/>
+                        <outlet property="districtTextField" destination="Txt-Dis-Add" id="Out-Dis-Add"/>
+                        <outlet property="emailErrorLabel" destination="94w-C0-Dt6" id="SCl-eZ-5bv"/>
+                        <outlet property="emailTextField" destination="Txt-Ema-Add" id="Out-Ema-Add"/>
+                        <outlet property="nameErrorLabel" destination="Xr6-HG-lKF" id="Kpi-9L-CBC"/>
+                        <outlet property="nameTextField" destination="Txt-Nam-Add" id="Out-Nam-Add"/>
+                        <outlet property="phoneErrorLabel" destination="dzs-tQ-wI9" id="bjK-LU-I8C"/>
+                        <outlet property="phoneTextField" destination="Txt-Pho-Add" id="Out-Pho-Add"/>
+                        <outlet property="streetTextField" destination="Txt-Str-Add" id="Out-Str-Add"/>
+                        <outlet property="wardTextField" destination="Txt-War-Add" id="Out-War-Add"/>
+                        <segue destination="Cnf-Ord-VC" kind="show" identifier="toConfirmOrder" id="nwg-26-g4B"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pla-Hol-Add" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977" y="3"/>
+        </scene>
+        <!--Confirm Order View Controller-->
+        <scene sceneID="Cnf-Ord-Sce">
+            <objects>
+                <viewController storyboardIdentifier="ConfirmOrderViewController" id="Cnf-Ord-VC" customClass="ConfirmOrderViewController" customModule="Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cnf-Viw-Main">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Bot-Bar">
+                                <rect key="frame" x="0.0" y="748" width="414" height="80"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.290.000đ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Btm">
+                                        <rect key="frame" x="16" y="28.5" width="108.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <color key="textColor" red="0.1450980392" green="0.38823529410000002" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Btn-Cnf">
+                                        <rect key="frame" x="248" y="15" width="150" height="50"/>
+                                        <color key="backgroundColor" red="0.1450980392" green="0.38823529410000002" blue="0.92156862750000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Cnf-Hg-Cnf"/>
+                                            <constraint firstAttribute="width" constant="150" id="Cnf-Wd-Cnf"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                        <state key="normal" title="Thanh toán">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmButtonTapped:" destination="Cnf-Ord-VC" eventType="touchUpInside" id="Act-Cnf-Btn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Cnf-Lbl-Btm" firstAttribute="centerY" secondItem="Cnf-Bot-Bar" secondAttribute="centerY" id="Cnf-Cy-Btm"/>
+                                    <constraint firstItem="Cnf-Btn-Cnf" firstAttribute="centerY" secondItem="Cnf-Bot-Bar" secondAttribute="centerY" id="Cnf-Cy-Cnf"/>
+                                    <constraint firstAttribute="height" constant="80" id="Cnf-Hg-Bar"/>
+                                    <constraint firstItem="Cnf-Lbl-Btm" firstAttribute="leading" secondItem="Cnf-Bot-Bar" secondAttribute="leading" constant="16" id="Cnf-Ld-Btm"/>
+                                    <constraint firstAttribute="trailing" secondItem="Cnf-Btn-Cnf" secondAttribute="trailing" constant="16" id="Cnf-Tr-Cnf"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Scr-Viw">
+                                <rect key="frame" x="0.0" y="150" width="414" height="598"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Stk-Main">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Viw-Add">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="130"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ĐỊA CHỈ NHẬN HÀNG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Tit1">
+                                                        <rect key="frame" x="16" y="16" width="130" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên người nhận" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Nam">
+                                                        <rect key="frame" x="16" y="42" width="114" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="09xx xxx xxx" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Pho">
+                                                        <rect key="frame" x="16" y="66.5" width="82.5" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số nhà, đường, phường..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Add">
+                                                        <rect key="frame" x="16" y="88.5" width="382" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="Cnf-Hg-Add"/>
+                                                    <constraint firstItem="Cnf-Lbl-Add" firstAttribute="leading" secondItem="Cnf-Viw-Add" secondAttribute="leading" constant="16" id="Cnf-Ld-Add"/>
+                                                    <constraint firstItem="Cnf-Lbl-Nam" firstAttribute="leading" secondItem="Cnf-Viw-Add" secondAttribute="leading" constant="16" id="Cnf-Ld-Nam"/>
+                                                    <constraint firstItem="Cnf-Lbl-Pho" firstAttribute="leading" secondItem="Cnf-Viw-Add" secondAttribute="leading" constant="16" id="Cnf-Ld-Pho"/>
+                                                    <constraint firstItem="Cnf-Lbl-Tit1" firstAttribute="leading" secondItem="Cnf-Viw-Add" secondAttribute="leading" constant="16" id="Cnf-Ld-Tit1"/>
+                                                    <constraint firstItem="Cnf-Lbl-Add" firstAttribute="top" secondItem="Cnf-Lbl-Pho" secondAttribute="bottom" constant="5" id="Cnf-Tp-Add"/>
+                                                    <constraint firstItem="Cnf-Lbl-Nam" firstAttribute="top" secondItem="Cnf-Lbl-Tit1" secondAttribute="bottom" constant="10" id="Cnf-Tp-Nam"/>
+                                                    <constraint firstItem="Cnf-Lbl-Pho" firstAttribute="top" secondItem="Cnf-Lbl-Nam" secondAttribute="bottom" constant="5" id="Cnf-Tp-Pho"/>
+                                                    <constraint firstItem="Cnf-Lbl-Tit1" firstAttribute="top" secondItem="Cnf-Viw-Add" secondAttribute="top" constant="16" id="Cnf-Tp-Tit1"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Cnf-Lbl-Add" secondAttribute="trailing" constant="16" id="Cnf-Tr-Add"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Viw-Pay">
+                                                <rect key="frame" x="0.0" y="140" width="414" height="90"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHƯƠNG THỨC THANH TOÁN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Tit2">
+                                                        <rect key="frame" x="16" y="16" width="184" height="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thanh toán khi nhận hàng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Pay">
+                                                        <rect key="frame" x="50" y="50" width="192" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="chevron.right" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Img-Chv">
+                                                        <rect key="frame" x="382" y="51.5" width="16" height="16.5"/>
+                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="20" id="Cnf-Hg-Chv"/>
+                                                            <constraint firstAttribute="width" constant="16" id="Cnf-Wd-Chv"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Btn-Pay">
+                                                        <rect key="frame" x="0.0" y="32" width="414" height="58"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <connections>
+                                                            <action selector="changePaymentMethodTapped:" destination="Cnf-Ord-VC" eventType="touchUpInside" id="Act-Cnf-Pay"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="Cnf-Btn-Pay" secondAttribute="bottom" id="Cnf-Bt-BtnPay"/>
+                                                    <constraint firstItem="Cnf-Img-Chv" firstAttribute="centerY" secondItem="Cnf-Lbl-Pay" secondAttribute="centerY" id="Cnf-Cy-Chv"/>
+                                                    <constraint firstAttribute="height" constant="90" id="Cnf-Hg-Pay"/>
+                                                    <constraint firstItem="Cnf-Btn-Pay" firstAttribute="leading" secondItem="Cnf-Viw-Pay" secondAttribute="leading" id="Cnf-Ld-BtnPay"/>
+                                                    <constraint firstItem="Cnf-Lbl-Pay" firstAttribute="leading" secondItem="Cnf-Viw-Pay" secondAttribute="leading" constant="50" id="Cnf-Ld-Pay"/>
+                                                    <constraint firstItem="Cnf-Lbl-Tit2" firstAttribute="leading" secondItem="Cnf-Viw-Pay" secondAttribute="leading" constant="16" id="Cnf-Ld-Tit2"/>
+                                                    <constraint firstItem="Cnf-Btn-Pay" firstAttribute="top" secondItem="Cnf-Lbl-Tit2" secondAttribute="bottom" id="Cnf-Tp-BtnPay"/>
+                                                    <constraint firstItem="Cnf-Lbl-Pay" firstAttribute="top" secondItem="Cnf-Lbl-Tit2" secondAttribute="bottom" constant="18" id="Cnf-Tp-Pay"/>
+                                                    <constraint firstItem="Cnf-Lbl-Tit2" firstAttribute="top" secondItem="Cnf-Viw-Pay" secondAttribute="top" constant="16" id="Cnf-Tp-Tit2"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Cnf-Btn-Pay" secondAttribute="trailing" id="Cnf-Tr-BtnPay"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Cnf-Img-Chv" secondAttribute="trailing" constant="16" id="Cnf-Tr-Chv"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Viw-Tot">
+                                                <rect key="frame" x="0.0" y="240" width="414" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng tiền hàng" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Tit3">
+                                                        <rect key="frame" x="16" y="21.5" width="96" height="17"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.290.000đ" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnf-Lbl-Tot">
+                                                        <rect key="frame" x="308" y="20.5" width="90" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="Cnf-Lbl-Tit3" firstAttribute="centerY" secondItem="Cnf-Viw-Tot" secondAttribute="centerY" id="Cnf-Cy-Tit3"/>
+                                                    <constraint firstItem="Cnf-Lbl-Tot" firstAttribute="centerY" secondItem="Cnf-Viw-Tot" secondAttribute="centerY" id="Cnf-Cy-Tot"/>
+                                                    <constraint firstAttribute="height" constant="60" id="Cnf-Hg-Tot"/>
+                                                    <constraint firstItem="Cnf-Lbl-Tit3" firstAttribute="leading" secondItem="Cnf-Viw-Tot" secondAttribute="leading" constant="16" id="Cnf-Ld-Tit3"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Cnf-Lbl-Tot" secondAttribute="trailing" constant="16" id="Cnf-Tr-Tot"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Cnf-Stk-Main" firstAttribute="bottom" secondItem="Cnf-Scr-Viw" secondAttribute="bottom" id="Cnf-Bt-Stk"/>
+                                    <constraint firstItem="Cnf-Stk-Main" firstAttribute="leading" secondItem="Cnf-Scr-Viw" secondAttribute="leading" id="Cnf-Ld-Stk"/>
+                                    <constraint firstItem="Cnf-Stk-Main" firstAttribute="top" secondItem="Cnf-Scr-Viw" secondAttribute="top" id="Cnf-Tp-Stk"/>
+                                    <constraint firstItem="Cnf-Stk-Main" firstAttribute="trailing" secondItem="Cnf-Scr-Viw" secondAttribute="trailing" id="Cnf-Tr-Stk"/>
+                                    <constraint firstItem="Cnf-Stk-Main" firstAttribute="width" secondItem="Cnf-Scr-Viw" secondAttribute="width" id="Cnf-Wd-Stk"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Cnf-Saf-Are"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Cnf-Bot-Bar" firstAttribute="bottom" secondItem="Cnf-Saf-Are" secondAttribute="bottom" id="Cnf-Bt-Bot"/>
+                            <constraint firstItem="Cnf-Bot-Bar" firstAttribute="leading" secondItem="Cnf-Saf-Are" secondAttribute="leading" id="Cnf-Ld-Bot"/>
+                            <constraint firstItem="Cnf-Scr-Viw" firstAttribute="leading" secondItem="Cnf-Saf-Are" secondAttribute="leading" id="Cnf-Ld-Scr"/>
+                            <constraint firstItem="Cnf-Bot-Bar" firstAttribute="top" secondItem="Cnf-Scr-Viw" secondAttribute="bottom" id="Cnf-Tp-Bot"/>
+                            <constraint firstItem="Cnf-Scr-Viw" firstAttribute="top" secondItem="Cnf-Saf-Are" secondAttribute="top" id="Cnf-Tp-Scr"/>
+                            <constraint firstItem="Cnf-Bot-Bar" firstAttribute="trailing" secondItem="Cnf-Saf-Are" secondAttribute="trailing" id="Cnf-Tr-Bot"/>
+                            <constraint firstItem="Cnf-Scr-Viw" firstAttribute="trailing" secondItem="Cnf-Saf-Are" secondAttribute="trailing" id="Cnf-Tr-Scr"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Fba-TB-le7"/>
+                    <connections>
+                        <outlet property="addressLabel" destination="Cnf-Lbl-Add" id="Out-Cnf-Add"/>
+                        <outlet property="bottomTotalLabel" destination="Cnf-Lbl-Btm" id="Out-Cnf-Btm"/>
+                        <outlet property="nameLabel" destination="Cnf-Lbl-Nam" id="Out-Cnf-Nam"/>
+                        <outlet property="paymentMethodLabel" destination="Cnf-Lbl-Pay" id="Out-Cnf-Pay"/>
+                        <outlet property="phoneLabel" destination="Cnf-Lbl-Pho" id="Out-Cnf-Pho"/>
+                        <outlet property="totalAmountLabel" destination="Cnf-Lbl-Tot" id="Out-Cnf-Tot"/>
+                        <segue destination="Pay-Met-VC" kind="show" identifier="toPaymentMethodScreen" id="HVp-FN-HgM"/>
+                        <segue destination="QR-Cod-VC" kind="show" identifier="toQRCodeScreen" id="FJL-0C-qUS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cnf-Pla-Hol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1700" y="3"/>
+        </scene>
+        <!--Code View Controller-->
+        <scene sceneID="QR-Cod-Sce">
+            <objects>
+                <viewController storyboardIdentifier="QRCodeViewController" id="QR-Cod-VC" customClass="QRCodeViewController" customModule="Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QR-Viw-Main">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền cần thanh toán" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR-Lbl-Tit">
+                                <rect key="frame" x="16" y="190" width="382" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.290.000đ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QR-Lbl-Amt">
+                                <rect key="frame" x="16" y="217" width="382" height="33.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QR-Img-Cod">
+                                <rect key="frame" x="82" y="290.5" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="QR-Hg-Cod"/>
+                                    <constraint firstAttribute="width" constant="250" id="QR-Wd-Cod"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QR-Btn-Fin">
+                                <rect key="frame" x="82" y="570.5" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.14117647059999999" green="0.20392156859999999" blue="0.72549019609999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="QR-Hg-Fin"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <state key="normal" title="Hoàn tất thanh toán">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="8"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="finishTapped:" destination="QR-Cod-VC" eventType="touchUpInside" id="Act-QR-Fin"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QR-Saf-Are"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QR-Img-Cod" firstAttribute="centerX" secondItem="QR-Viw-Main" secondAttribute="centerX" id="QR-Cx-Cod"/>
+                            <constraint firstItem="QR-Btn-Fin" firstAttribute="centerX" secondItem="QR-Viw-Main" secondAttribute="centerX" id="QR-Cx-Fin"/>
+                            <constraint firstItem="QR-Lbl-Amt" firstAttribute="leading" secondItem="QR-Saf-Are" secondAttribute="leading" constant="16" id="QR-Ld-Amt"/>
+                            <constraint firstItem="QR-Lbl-Tit" firstAttribute="leading" secondItem="QR-Saf-Are" secondAttribute="leading" constant="16" id="QR-Ld-Tit"/>
+                            <constraint firstItem="QR-Lbl-Amt" firstAttribute="top" secondItem="QR-Lbl-Tit" secondAttribute="bottom" constant="10" id="QR-Tp-Amt"/>
+                            <constraint firstItem="QR-Img-Cod" firstAttribute="top" secondItem="QR-Lbl-Amt" secondAttribute="bottom" constant="40" id="QR-Tp-Cod"/>
+                            <constraint firstItem="QR-Btn-Fin" firstAttribute="top" secondItem="QR-Img-Cod" secondAttribute="bottom" constant="30" id="QR-Tp-Fin"/>
+                            <constraint firstItem="QR-Lbl-Tit" firstAttribute="top" secondItem="QR-Saf-Are" secondAttribute="top" constant="40" id="QR-Tp-Tit"/>
+                            <constraint firstItem="QR-Saf-Are" firstAttribute="trailing" secondItem="QR-Lbl-Amt" secondAttribute="trailing" constant="16" id="QR-Tr-Amt"/>
+                            <constraint firstItem="QR-Saf-Are" firstAttribute="trailing" secondItem="QR-Lbl-Tit" secondAttribute="trailing" constant="16" id="QR-Tr-Tit"/>
+                            <constraint firstItem="QR-Btn-Fin" firstAttribute="width" secondItem="QR-Img-Cod" secondAttribute="width" id="QR-Wd-Fin"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xdc-Qu-4iD"/>
+                    <connections>
+                        <outlet property="amountLabel" destination="QR-Lbl-Amt" id="Out-QR-Amt"/>
+                        <outlet property="qrImageView" destination="QR-Img-Cod" id="Out-QR-Cod"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QR-Pla-Hol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2793" y="362"/>
+        </scene>
+        <!--Payment Method View Controller-->
+        <scene sceneID="Pay-Met-Sce">
+            <objects>
+                <viewController storyboardIdentifier="PaymentMethodViewController" id="Pay-Met-VC" customClass="PaymentMethodViewController" customModule="Cart" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Pay-Viw-Main">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHỌN PHƯƠNG THỨC THANH TOÁN" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Lbl-Tit">
+                                <rect key="frame" x="16" y="190" width="382" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Stk-Btn">
+                                <rect key="frame" x="16" y="227" width="382" height="340"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Btn-1">
+                                        <rect key="frame" x="0.0" y="0.0" width="382" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Hg-Pay-1"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Thanh toán khi nhận hàng">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="methodSelected:" destination="Pay-Met-VC" eventType="touchUpInside" id="Act-Sel-1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Btn-2">
+                                        <rect key="frame" x="0.0" y="70" width="382" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Hg-Pay-2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Thanh toán VNPAY-QR">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="methodSelected:" destination="Pay-Met-VC" eventType="touchUpInside" id="Act-Sel-2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Btn-3">
+                                        <rect key="frame" x="0.0" y="140" width="382" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Hg-Pay-3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="ATM nội địa">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="methodSelected:" destination="Pay-Met-VC" eventType="touchUpInside" id="Act-Sel-3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Btn-4">
+                                        <rect key="frame" x="0.0" y="210" width="382" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Hg-Pay-4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Thẻ thanh toán quốc tế">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="methodSelected:" destination="Pay-Met-VC" eventType="touchUpInside" id="Act-Sel-4"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pay-Btn-5">
+                                        <rect key="frame" x="0.0" y="280" width="382" height="60"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="Hg-Pay-5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                        <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Ứng dụng Mobile Banking">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="methodSelected:" destination="Pay-Met-VC" eventType="touchUpInside" id="Act-Sel-5"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pay-Saf-Are"/>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Pay-Stk-Btn" firstAttribute="leading" secondItem="Pay-Saf-Are" secondAttribute="leading" constant="16" id="Pay-Ld-Stk"/>
+                            <constraint firstItem="Pay-Lbl-Tit" firstAttribute="leading" secondItem="Pay-Saf-Are" secondAttribute="leading" constant="16" id="Pay-Ld-Tit"/>
+                            <constraint firstItem="Pay-Stk-Btn" firstAttribute="top" secondItem="Pay-Lbl-Tit" secondAttribute="bottom" constant="20" id="Pay-Tp-Stk"/>
+                            <constraint firstItem="Pay-Lbl-Tit" firstAttribute="top" secondItem="Pay-Saf-Are" secondAttribute="top" constant="40" id="Pay-Tp-Tit"/>
+                            <constraint firstItem="Pay-Saf-Are" firstAttribute="trailing" secondItem="Pay-Stk-Btn" secondAttribute="trailing" constant="16" id="Pay-Tr-Stk"/>
+                            <constraint firstItem="Pay-Saf-Are" firstAttribute="trailing" secondItem="Pay-Lbl-Tit" secondAttribute="trailing" constant="16" id="Pay-Tr-Tit"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="B2a-g9-Pjw"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pay-Pla-Hol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2793" y="-325"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <image name="chevron.up" catalog="system" width="128" height="70"/>
+        <image name="gift.fill" catalog="system" width="128" height="125"/>
+        <image name="trash" catalog="system" width="117" height="128"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
