@@ -1,4 +1,6 @@
 import UIKit
+import FirebaseFirestore
+
 
 class ConfirmOrderViewController: UIViewController {
 
@@ -12,6 +14,7 @@ class ConfirmOrderViewController: UIViewController {
     
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var bottomTotalLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Xác nhận đơn hàng"
@@ -41,41 +44,63 @@ class ConfirmOrderViewController: UIViewController {
         return (formatter.string(from: NSNumber(value: price)) ?? "0") + "đ"
     }
 
-    
-    
-    
     @IBAction func changePaymentMethodTapped(_ sender: UIButton) {
         performSegue(withIdentifier: "toPaymentMethodScreen", sender: nil)
     }
 
-    
     @IBAction func confirmButtonTapped(_ sender: UIButton) {
+        
         if orderInfo?.paymentMethod == "Thanh toán VNPAY-QR" {
-            
             performSegue(withIdentifier: "toQRCodeScreen", sender: nil)
-        } else {
             
-            let method = orderInfo?.paymentMethod ?? "Tiền mặt"
-            let alert = UIAlertController(title: "Đặt hàng thành công", message: "Đơn hàng của bạn sẽ được thanh toán qua: \(method)", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Tuyệt vời", style: .default, handler: { _ in
-                
-                self.navigationController?.popToRootViewController(animated: true)
-            }))
-            present(alert, animated: true)
+        } else {
+        
+            
+            
+            guard let order = orderInfo else { return }
+            
+            
+            let db = Firestore.firestore()
+            
+            
+            do {
+                try db.collection("Orders").addDocument(from: order) { error in
+                    
+                    if let error = error {
+                        print("❌ Lỗi lưu đơn hàng: \(error.localizedDescription)")
+                        
+                        
+                        let errorAlert = UIAlertController(title: "Lỗi mạng", message: "Không thể lưu đơn hàng, vui lòng thử lại.", preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction(title: "Đóng", style: .cancel))
+                        self.present(errorAlert, animated: true)
+                        
+                    } else {
+                        
+                        print("✅ Đã lưu đơn hàng \(order.paymentMethod) lên Firebase thành công!")
+                        
+                        DispatchQueue.main.async {
+                            let method = self.orderInfo?.paymentMethod ?? "Tiền mặt"
+                            let alert = UIAlertController(title: "Đặt hàng thành công", message: "Đơn hàng của bạn sẽ được thanh toán qua: \(method)", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Tuyệt vời", style: .default, handler: { _ in
+                                self.navigationController?.popToRootViewController(animated: true)
+                            }))
+                            self.present(alert, animated: true)
+                        }
+                    }
+                }
+            } catch let error {
+                print("❌ Lỗi mã hoá dữ liệu Firebase: \(error.localizedDescription)")
+            }
         }
     }
 
-    
-    
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toQRCodeScreen" {
             let qrVC = segue.destination as! QRCodeViewController
             qrVC.orderTotal = orderInfo?.totalAmount ?? 0
-            
+           
         } else if segue.identifier == "toPaymentMethodScreen" {
             let paymentVC = segue.destination as! PaymentMethodViewController
-            
             
             paymentVC.onSelectMethod = { [weak self] selectedMethod in
                 self?.orderInfo?.paymentMethod = selectedMethod

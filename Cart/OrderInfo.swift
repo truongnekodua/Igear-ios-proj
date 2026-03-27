@@ -1,6 +1,6 @@
 import Foundation
 
-struct Address {
+struct Address: Codable{
     var fullName: String
     var phone: String
     var email: String
@@ -10,7 +10,7 @@ struct Address {
     var street: String
 }
 
-struct OrderInfo {
+struct OrderInfo: Codable{
     var cartItems: [CartItem]
     var totalAmount: Double
     var address: Address?

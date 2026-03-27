@@ -1,6 +1,6 @@
 import UIKit
 
-struct CartItem {
+struct CartItem: Codable{
     var name: String
     var price: Double
     var quantity: Int
