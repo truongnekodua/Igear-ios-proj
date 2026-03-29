@@ -1,6 +1,7 @@
 import UIKit
 import FirebaseFirestore
 
+
 class ConfirmOrderViewController: UIViewController {
 
     var orderInfo: OrderInfo?
@@ -53,59 +54,42 @@ class ConfirmOrderViewController: UIViewController {
             performSegue(withIdentifier: "toQRCodeScreen", sender: nil)
             
         } else {
+        
+            
             
             guard let order = orderInfo else { return }
+            
+            
             let db = Firestore.firestore()
             
             
-            var addressDict: [String: Any] = [:]
-            if let addr = order.address {
-                addressDict = [
-                    "fullName": addr.fullName,
-                    "phone": addr.phone,
-                    "email": addr.email,
-                    "city": addr.city,
-                    "district": addr.district,
-                    "ward": addr.ward,
-                    "street": addr.street
-                ]
-            }
-            
-            
-            let itemsArrayForFirebase = order.cartItems.map { $0.toDictionary() }
-            
-            
-            let orderData: [String: Any] = [
-                "address": addressDict,
-                "cartItems": itemsArrayForFirebase,
-                "totalAmount": order.totalAmount,
-                "paymentMethod": order.paymentMethod,
-                "orderDate": FieldValue.serverTimestamp(),
-                "status": "Đang xử lý"
-            ]
-            
-            
-            db.collection("Orders").addDocument(data: orderData) { error in
-                if let error = error {
-                    print("❌ Lỗi lưu đơn hàng: \(error.localizedDescription)")
+            do {
+                try db.collection("Orders").addDocument(from: order) { error in
                     
-                    let errorAlert = UIAlertController(title: "Lỗi mạng", message: "Không thể lưu đơn hàng, vui lòng thử lại.", preferredStyle: .alert)
-                    errorAlert.addAction(UIAlertAction(title: "Đóng", style: .cancel))
-                    self.present(errorAlert, animated: true)
-                    
-                } else {
-                    print("✅ Đã lưu đơn hàng \(order.paymentMethod) lên Firebase CỰC MƯỢT!")
-                    
-                    DispatchQueue.main.async {
-                        let method = self.orderInfo?.paymentMethod ?? "Tiền mặt"
-                        let alert = UIAlertController(title: "Đặt hàng thành công", message: "Đơn hàng của bạn sẽ được thanh toán qua: \(method)", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Tuyệt vời", style: .default, handler: { _ in
-                            
-                            self.navigationController?.popToRootViewController(animated: true)
-                        }))
-                        self.present(alert, animated: true)
+                    if let error = error {
+                        print("❌ Lỗi lưu đơn hàng: \(error.localizedDescription)")
+                        
+                        
+                        let errorAlert = UIAlertController(title: "Lỗi mạng", message: "Không thể lưu đơn hàng, vui lòng thử lại.", preferredStyle: .alert)
+                        errorAlert.addAction(UIAlertAction(title: "Đóng", style: .cancel))
+                        self.present(errorAlert, animated: true)
+                        
+                    } else {
+                        
+                        print("✅ Đã lưu đơn hàng \(order.paymentMethod) lên Firebase thành công!")
+                        
+                        DispatchQueue.main.async {
+                            let method = self.orderInfo?.paymentMethod ?? "Tiền mặt"
+                            let alert = UIAlertController(title: "Đặt hàng thành công", message: "Đơn hàng của bạn sẽ được thanh toán qua: \(method)", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Tuyệt vời", style: .default, handler: { _ in
+                                self.navigationController?.popToRootViewController(animated: true)
+                            }))
+                            self.present(alert, animated: true)
+                        }
                     }
                 }
+            } catch let error {
+                print("❌ Lỗi mã hoá dữ liệu Firebase: \(error.localizedDescription)")
             }
         }
     }
@@ -114,13 +98,9 @@ class ConfirmOrderViewController: UIViewController {
         if segue.identifier == "toQRCodeScreen" {
             let qrVC = segue.destination as! QRCodeViewController
             qrVC.orderTotal = orderInfo?.totalAmount ?? 0
-            
-            
-            qrVC.orderInfo = orderInfo
-            
+           
         } else if segue.identifier == "toPaymentMethodScreen" {
             let paymentVC = segue.destination as! PaymentMethodViewController
-            
             
             paymentVC.onSelectMethod = { [weak self] selectedMethod in
                 self?.orderInfo?.paymentMethod = selectedMethod

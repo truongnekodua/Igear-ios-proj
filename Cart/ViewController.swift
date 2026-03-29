@@ -1,6 +1,7 @@
 import UIKit
 
-struct CartItem: Codable{
+
+struct CartItem: Codable {
     var name: String
     var price: Double
     var quantity: Int
@@ -8,21 +9,45 @@ struct CartItem: Codable{
     var isSelected: Bool
     var gifts: [String]
 }
+extension CartItem {
+    func toDictionary() -> [String: Any] {
+        return [
+            "name": name,
+            "price": price,
+            "quantity": quantity,
+            "imageName": imageName,
+            "gifts": gifts 
+        ]
+    }
+}
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol VoucherDelegate: AnyObject {
+    func didSelectVoucher(code: String, discount: Double, applicableItem: String)
+}
+
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, VoucherDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var voucherStatusLabel: UILabel!
+    
     
     var cartItems: [CartItem] = [
         CartItem(name: "Laptop Acer Nitro 16 Phoenix...", price: 29990000.0, quantity: 1, imageName: "acer_nitro", isSelected: true, gifts: ["Ba lô Acer Gaming SUV", "Bàn phím cơ Acer PREDATOR", "Mã giảm 150.000đ cho chuột"]),
         CartItem(name: "RAM Desktop Corsair Dominator 32GB...", price: 4500000.0, quantity: 1, imageName: "corsair_ram", isSelected: false, gifts: [])
     ]
 
+    
+    var currentDiscount: Double = 0.0
+    var applicableVoucherItem: String = "ALL"
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        
+        
+        voucherStatusLabel?.isHidden = true
         updateTotal()
     }
 
@@ -33,11 +58,57 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return (formatter.string(from: NSNumber(value: price)) ?? "0") + "đ"
     }
 
+    
     func updateTotal() {
-        let total = cartItems.filter { $0.isSelected }.reduce(0) { $0 + ($1.price * Double($1.quantity)) }
-        totalPriceLabel.text = formatVNĐ(total)
+        let selectedItems = cartItems.filter { $0.isSelected }
+        
+        
+        let rawTotal = selectedItems.reduce(0) { $0 + ($1.price * Double($1.quantity)) }
+        
+        
+        var finalTotal = rawTotal
+        
+        if currentDiscount > 0 {
+            
+            let isVoucherValid = applicableVoucherItem == "ALL" || selectedItems.contains(where: { $0.name.contains(applicableVoucherItem) })
+            
+            if isVoucherValid && rawTotal > 0 {
+                finalTotal = rawTotal * (1 - currentDiscount)
+                voucherStatusLabel?.isHidden = false
+                voucherStatusLabel?.text = " ĐÃ CHỌN 1 "
+            } else {
+                
+                voucherStatusLabel?.isHidden = true
+            }
+        } else {
+            voucherStatusLabel?.isHidden = true
+        }
+
+        totalPriceLabel.text = formatVNĐ(finalTotal)
     }
     
+    
+    func didSelectVoucher(code: String, discount: Double, applicableItem: String) {
+        let selectedItems = cartItems.filter { $0.isSelected }
+        let isVoucherValid = applicableItem == "ALL" || selectedItems.contains(where: { $0.name.contains(applicableItem) })
+        
+        if isVoucherValid {
+            currentDiscount = discount
+            applicableVoucherItem = applicableItem
+            updateTotal()
+            
+            let alert = UIAlertController(title: "Thành công", message: "Đã áp dụng mã \(code) thành công!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Rất tiếc", message: "Mã này không áp dụng cho các sản phẩm bạn đang chọn.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            present(alert, animated: true)
+        }
+    }
+    
+  
+
     @IBAction func trashButtonTapped(_ sender: UIBarButtonItem) {
         cartItems.removeAll { $0.isSelected }
         tableView.reloadData()
@@ -107,7 +178,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let item = cartItems[indexPath.row]
-        
         if item.gifts.isEmpty {
             return 140
         } else {
@@ -115,17 +185,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    // MARK: - Điều hướng (Navigation)
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Sang màn Địa chỉ
         if segue.identifier == "toAddressScreen" {
             let addressVC = segue.destination as! AddressViewController
-            
-            
             let selectedItems = cartItems.filter { $0.isSelected }
             
             
+            let rawTotal = selectedItems.reduce(0) { $0 + ($1.price * Double($1.quantity)) }
+            let isVoucherValid = applicableVoucherItem == "ALL" || selectedItems.contains(where: { $0.name.contains(applicableVoucherItem) })
+            let finalTotal = (isVoucherValid && currentDiscount > 0) ? rawTotal * (1 - currentDiscount) : rawTotal
+            
             addressVC.cartItems = selectedItems
-            addressVC.orderTotal = selectedItems.reduce(0) { $0 + ($1.price * Double($1.quantity)) }
+            addressVC.orderTotal = finalTotal
+        }
+        
+        else if let destVC = segue.destination as? VoucherViewController {
+            destVC.delegate = self
         }
     }
 }

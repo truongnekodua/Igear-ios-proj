@@ -19,7 +19,7 @@ class CartItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        
+
         checkboxImageView.isUserInteractionEnabled = true
         let tapCheck = UITapGestureRecognizer(target: self, action: #selector(checkTapped))
         checkboxImageView.addGestureRecognizer(tapCheck)
@@ -32,9 +32,8 @@ class CartItemCell: UITableViewCell {
         }
     }
 
-    
-    @IBAction func plusTapped(_ sender: Any) { plusAction?() }
-    @IBAction func minusTapped(_ sender: Any) { minusAction?() }
+    @IBAction func plusTapped(_ sender: UIButton) { plusAction?() }
+    @IBAction func minusTapped(_ sender: UIButton) { minusAction?() }
     
     @objc func checkTapped() { toggleCheckAction?() }
     @objc func giftTapped() { showGiftAction?() }
@@ -43,7 +42,6 @@ class CartItemCell: UITableViewCell {
     func configureCheck(isSelected: Bool) {
         let imageName = isSelected ? "checkmark.square.fill" : "square"
         checkboxImageView.image = UIImage(systemName: imageName)
-        
         checkboxImageView.tintColor = isSelected ? UIColor(red: 36/255, green: 52/255, blue: 185/255, alpha: 1) : .lightGray
     }
 }
